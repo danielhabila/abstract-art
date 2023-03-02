@@ -92,7 +92,7 @@ const CreatePost = () => {
                   labelName="Your Name"
                   type="text"
                   name="name"
-                  placeholder="Ex., danny drinkwater"
+                  placeholder="Eg., danny drinkwater"
                   value={form.name}
                   handleChange={handleChange}
                 />
@@ -100,7 +100,7 @@ const CreatePost = () => {
                   labelName="Prompt"
                   type="text"
                   name="prompt"
-                  placeholder="Ex., A bear riding a unicycle at a dog park"
+                  placeholder="Eg., Create an abstract piece inspired by movement and dance"
                   value={form.prompt}
                   handleChange={handleChange}
                   isSurpriseMe //lets us know whether to show additional button with this form field

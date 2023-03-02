@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-import Carousel01 from "../images/carousel-01.jpg";
-import Carousel02 from "../images/carousel-02.jpg";
-import Carousel03 from "../images/carousel-03.jpg";
-import Carousel04 from "../images/carousel-04.jpg";
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline";
+import FileSaver from "file-saver";
 
 function Carousel() {
   const [carouselImages, setCarouselImages] = useState([]);
   console.log(carouselImages);
+
+  const downloadImage = (_id, photo) => {
+    FileSaver.saveAs(photo, `download-${_id}.jpg`);
+  };
 
   useEffect(() => {
     const carouselImages = async () => {
@@ -36,42 +37,61 @@ function Carousel() {
           </div>
 
           {/* DaisyUI Carousel */}
-          <div className="carousel carousel-center rounded-box space-x-4">
-            {carouselImages?.slice(0, 9).map((item, index) => {
+          <div className="carousel carousel-center rounded-box space-x-4 pb-8">
+            {carouselImages?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  // id="carousel-item"
-                  className="carousel-item w-80 hover cursor-grab"
+                  className="relative group carousel-item w-80 hover cursor-grab"
                 >
                   <img src={item.photo} alt="Pizza" />
+                  <div className="hidden group-hover:block absolute bottom-0 left-0 right-0 p-3">
+                    {/* Backdrop */}
+                    <div
+                      className="absolute inset-0 -mt-4 bg-gradient-to-t from-gray-800 to-transparent opacity-80 pointer-events-none"
+                      aria-hidden="true"
+                    />
+                    {/* Content */}
+                    <div className="relative flex flex-col justify-between">
+                      <div className="flex items-center">
+                        <div className="">
+                          <div className="font-semibold text-white text-sm overflow-y-auto">
+                            {item.prompt}
+                          </div>
+                          {item.name && item.name !== "" ? (
+                            <div className="flex justify-between items-center">
+                              <div className=" text-white text-xs font-semibold opacity-60 truncate">
+                                {item.name}
+                              </div>
+                              <button
+                                className="text-rose-500 hover:text-rose-600 "
+                                onClick={() =>
+                                  downloadImage(item._id, item.photo)
+                                }
+                              >
+                                <ArrowDownCircleIcon className="w-6" />
+                              </button>
+                            </div>
+                          ) : (
+                            <div className="flex justify-between">
+                              <div className="">{""}</div>
+                              <button
+                                className="text-rose-500 hover:text-rose-600"
+                                onClick={() =>
+                                  downloadImage(item._id, item.photo)
+                                }
+                              >
+                                <ArrowDownCircleIcon className="w-6" />
+                              </button>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               );
             })}
-          </div>
-
-          {/* Arrows */}
-          <div className="flex mt-12 space-x-4 justify-end">
-            <button className="carousel-prev relative z-20 w-14 h-14 rounded-full flex items-center justify-center group bg-gray-700 hover:bg-blue-500 transition duration-150 ease-in-out">
-              <span className="sr-only">Previous</span>
-              <svg
-                className="w-4 h-4 fill-gray-400 group-hover:fill-white transition duration-150 ease-in-out"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6.7 14.7l1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z" />
-              </svg>
-            </button>
-            <button className="carousel-next relative z-20 w-14 h-14 rounded-full flex items-center justify-center group bg-gray-700 hover:bg-blue-500 transition duration-150 ease-in-out">
-              <span className="sr-only">Next</span>
-              <svg
-                className="w-4 h-4 fill-gray-400 group-hover:fill-white transition duration-150 ease-in-out"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>

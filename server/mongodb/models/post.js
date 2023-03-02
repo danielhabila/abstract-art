@@ -15,6 +15,6 @@ const postSchema = new mongoose.Schema({
   },
 });
 
-const postToDB = mongoose.model("post", postSchema);
+const postToDB = mongoose.model("community-post", postSchema);
 
 export default postToDB;

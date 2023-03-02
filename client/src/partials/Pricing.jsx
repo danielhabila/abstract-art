@@ -65,9 +65,7 @@ function Pricing() {
                   <div className="font-cabinet-grotesk inline-flex items-baseline mb-2">
                     <span className="text-5xl font-bold">Free</span>
                   </div>
-                  <div className="text-gray-500 mb-6">
-                    Explore the tool, save inspiration and create collections.
-                  </div>
+
                   <Link
                     className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
                     to="/signup"
@@ -141,9 +139,6 @@ function Pricing() {
                       {annual ? "29" : "35"}
                     </span>
                     <span className="font-medium text-gray-400">/mo</span>
-                  </div>
-                  <div className="text-gray-400 mb-6">
-                    Get unlimited access to our new mood boarding tool.
                   </div>
                   <Link
                     className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
