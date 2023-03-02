@@ -14,7 +14,7 @@ function Carousel() {
   useEffect(() => {
     const carouselImages = async () => {
       try {
-        const response = await axios.get("http://localhost:2000/api/images/db");
+        const response = await axios.get("/api/images/db");
         if (response.status === 200) {
           setCarouselImages(response.data.data);
         }

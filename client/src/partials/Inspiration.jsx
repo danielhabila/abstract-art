@@ -16,7 +16,7 @@ function Inspiration() {
     const fetchPopularImages = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:2000/api/images");
+        const response = await axios.get("/api/images");
         setGalleryImages(response.data);
       } catch (error) {
         console.log(error);
