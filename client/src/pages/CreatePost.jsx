@@ -7,6 +7,8 @@ import preview from "../assets/preview.png";
 import axios from "axios";
 import Header from "../partials/Header";
 import HeroImage from "../images/hero-image.png";
+import { ArrowDownCircleIcon } from "@heroicons/react/24/outline";
+import FileSaver from "file-saver";
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -19,13 +21,24 @@ const CreatePost = () => {
     photo: "",
   });
   // -----------------------------------------------------------------------------
+
+  const downloadImage = () => {
+    if (form.photo) {
+      FileSaver.saveAs(
+        form.photo,
+        "iPromiseYouWontRegretGivingMeAnInterview.jpg"
+      );
+    }
+  };
+
+  // -----------------------------------------------------------------------------
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (form.prompt && form.photo) {
       try {
         setLoading(true);
-        await axios.post("/api/v1/post", {
+        await axios.post("/api/postToDB", {
           ...form,
         });
         alert("Success");
@@ -54,14 +67,16 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await axios.post("/api/v1/dalle", {
+        const response = await axios.post("/api/dalle", {
           prompt: form.prompt,
         });
 
         const data = response.data;
+        console.log("returned image data from openai", data);
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
       } catch (err) {
         alert(err);
+        console.log(err);
       } finally {
         setGeneratingImg(false);
       }
@@ -75,8 +90,9 @@ const CreatePost = () => {
     <>
       <Header />
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 ">
+      <section className=" relative max-w-6xl mx-auto px-4 sm:px-6 min-w-screen ">
         <div className="relative max-w-xl mx-auto md:max-w-none md:text-left flex flex-col md:flex-row ">
+          {/* left side */}
           <div
             className="relative top-36 pb-20"
             data-aos="fade-right"
@@ -126,6 +142,22 @@ const CreatePost = () => {
                       <Loader />
                     </div>
                   )}
+                  {/* ************************************************************** */}
+                  {/* Content on hover */}
+                  <div className=" md:group-hover:block absolute bottom-0 left-0 right-0 p-3">
+                    {/* Content */}
+                    <div className="relative flex justify-between">
+                      <div className=" ">{""}</div>
+
+                      <button
+                        className="button text-rose-500 hover:text-rose-600"
+                        onClick={() => downloadImage()}
+                      >
+                        <ArrowDownCircleIcon className="icon w-6" />
+                      </button>
+                    </div>
+                  </div>
+                  {/* ************************************************************** */}
                 </div>
               </div>
               <div className="mt-5 flex gap-5">
@@ -151,15 +183,15 @@ const CreatePost = () => {
               </div>
             </form>
           </div>
-          {/* Image */}
+          {/* Image -- right side*/}
           <div
-            className="hidden md:flex max-w-sm mx-auto md:max-w-none  md:left-[40rem] md:ml-16 lg:ml-32 xl:ml-52 mt-12 md:-mt-12 absolute top-40"
+            className="hidden md:flex max-w-sm mx-auto md:max-w-none  md:left-[40rem] md:ml-16 lg:ml-32 xl:ml-52 mt-12 md:-mt-12 absolute top-40 "
             data-aos="fade-left"
             data-aos-duration="1100"
           >
             <img
               src={HeroImage}
-              className="md:max-w-none"
+              className="md:max-w-none "
               width="584"
               height="659"
               alt="Hero Illustration"

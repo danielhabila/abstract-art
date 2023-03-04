@@ -16,7 +16,7 @@ function Carousel() {
       try {
         const response = await axios.get("/api/images/db");
         if (response.status === 200) {
-          setCarouselImages(response.data.data);
+          setCarouselImages(response.data.data.reverse());
         }
       } catch (error) {
         console.log(error);
@@ -42,7 +42,7 @@ function Carousel() {
               return (
                 <div
                   key={index}
-                  className="relative group carousel-item w-80 hover cursor-grab"
+                  className="relative group carousel-item w-80 hover cursor-grab "
                 >
                   <img src={item.photo} alt="Pizza" />
                   <div className="hidden group-hover:block absolute bottom-0 left-0 right-0 p-3">

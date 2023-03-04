@@ -14,7 +14,7 @@ function Header() {
               to="/"
               aria-label=""
             >
-              abstract.art
+              abstract.ai
             </Link>
           </div>
           {/* Desktop navigation */}

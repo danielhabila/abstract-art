@@ -19,3 +19,6 @@
     }
 }
 
+.button:hover .icon {
+    transform: scale(1.1);
+  }
