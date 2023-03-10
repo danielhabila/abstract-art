@@ -68,7 +68,7 @@ function Pricing() {
 
                   <Link
                     className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
-                    to="/signup"
+                    to="#"
                   >
                     Join The Community
                   </Link>
@@ -142,7 +142,7 @@ function Pricing() {
                   </div>
                   <Link
                     className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
-                    to="/signup"
+                    to="#"
                   >
                     Subscribe
                   </Link>

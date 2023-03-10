@@ -35,7 +35,7 @@ function Footer() {
           <div className="text-center mb-8">
             {/* Social links */}
             <ul className="inline-flex mb-4">
-              <li>
+              {/* <li>
                 <a
                   className="flex justify-center items-center text-blue-500 bg-blue-100 hover:text-white hover:bg-blue-500 rounded-full transition duration-150 ease-in-out"
                   href="#0"
@@ -43,11 +43,13 @@ function Footer() {
                 >
                   <TwitterIcon />
                 </a>
-              </li>
+              </li> */}
               <li className="ml-4">
                 <a
                   className="flex justify-center items-center text-blue-500 bg-blue-100 hover:text-white hover:bg-blue-500 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
+                  href="https://github.com/danielhabila/abstract-art.git"
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label="Github"
                 >
                   <GithubIcon />

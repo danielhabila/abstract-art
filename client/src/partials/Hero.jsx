@@ -48,8 +48,8 @@ function Hero() {
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
-                Explore our artworks. If you don't see something you love, have
-                our AI powered artist generate one for you.
+                Explore our artwork collection. If you don't see something you
+                love, have our AI powered artist generate one for you.
               </p>
               {/* Buttons */}
               <div
@@ -59,7 +59,7 @@ function Hero() {
               >
                 <Link
                   className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
-                  to="/signup"
+                  to="#"
                 >
                   Join The Community
                 </Link>
