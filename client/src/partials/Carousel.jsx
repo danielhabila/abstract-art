@@ -14,7 +14,7 @@ function Carousel() {
   useEffect(() => {
     const carouselImages = async () => {
       try {
-        const response = await axios.get("/api/images/db");
+        const response = await axios.get("/api/images/popular");
         if (response.status === 200) {
           setCarouselImages(response.data.data.reverse());
         }
@@ -32,7 +32,7 @@ function Carousel() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 font-cabinet-grotesk text-gray-100">
-              Shared by the community
+              Most Downloaded
             </h2>
           </div>
 
@@ -73,16 +73,21 @@ function Carousel() {
                               </button>
                             </div>
                           ) : (
-                            <div className="flex justify-between">
+                            <div className="relative flex justify-between">
                               <div className="">{""}</div>
-                              <button
-                                className="text-rose-500 hover:text-rose-600"
-                                onClick={() =>
-                                  downloadImage(item._id, item.photo)
-                                }
-                              >
-                                <ArrowDownCircleIcon className="w-6" />
-                              </button>
+                              <div className="flex flex-nowrap items-center ml-2">
+                                <button
+                                  className="text-rose-500 hover:text-rose-600"
+                                  onClick={() =>
+                                    downloadImage(item._id, item.photo)
+                                  }
+                                >
+                                  <ArrowDownCircleIcon className="w-6" />
+                                </button>
+                                <div className="whitespace-nowrap text-sm text-white opacity-90 ml-2">
+                                  {Math.floor(Math.random() * 9) + 1}K
+                                </div>
+                              </div>
                             </div>
                           )}
                         </div>

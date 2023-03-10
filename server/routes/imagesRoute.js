@@ -4,6 +4,7 @@ import axios from "axios";
 import cors from "cors";
 import { v2 as cloudinary } from "cloudinary";
 import postToDB from "../mongodb/models/post.js";
+import popular from "../mongodb/models/popular.js";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -16,22 +17,34 @@ app.use(cors());
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+// router.get("/", async (req, res) => {
+//   try {
+//     const response = await axios.get(process.env.CLOUDINARY_GET_IMAGES);
+//     const data = response.data.resources;
+//     res.json(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
+
+//Get all posts
+router.get("/shared", async (req, res) => {
   try {
-    const response = await axios.get(
-      `https://${process.env.CLOUDINARY_API_KEY}:${process.env.CLOUDINARY_API_SECRET}@api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image?folder/prefix=abstract/popular`
-    );
-    const data = response.data.resources;
-    res.json(data);
+    const posts = await postToDB.find({});
+
+    res.status(200).json({ success: true, data: posts });
   } catch (error) {
-    console.log(error);
+    res.status(500).json({
+      success: false,
+      message: "Fetching posts failed, please try again",
+    });
   }
 });
 
-//Get all posts
-router.get("/db", async (req, res) => {
+//Get popular posts
+router.get("/popular", async (req, res) => {
   try {
-    const posts = await postToDB.find({});
+    const posts = await popular.find({});
 
     res.status(200).json({ success: true, data: posts });
   } catch (error) {

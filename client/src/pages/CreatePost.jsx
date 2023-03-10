@@ -38,8 +38,8 @@ const CreatePost = () => {
         await axios.post("/api/postToDB", {
           ...form,
         });
+        alert("Success");
         navigate("/");
-        alert("Your image was successfully shared with the community");
       } catch (err) {
         console.log(err);
       } finally {
