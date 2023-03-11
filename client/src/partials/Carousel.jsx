@@ -8,7 +8,7 @@ function Carousel() {
   console.log(carouselImages);
 
   const downloadImage = (_id, photo) => {
-    FileSaver.saveAs(photo, `download-${_id}.jpg`);
+    FileSaver.saveAs(photo, `abstractAI-${_id}.jpg`);
   };
 
   useEffect(() => {

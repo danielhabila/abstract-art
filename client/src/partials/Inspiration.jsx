@@ -9,7 +9,7 @@ function Inspiration() {
   const [galleryImages, setGalleryImages] = useState([]);
 
   const downloadImage = (_id, photo) => {
-    FileSaver.saveAs(photo, `download-${_id}.jpg`);
+    FileSaver.saveAs(photo, `abstractAI-${_id}.jpg`);
   };
 
   useEffect(() => {
@@ -84,18 +84,22 @@ function Inspiration() {
                               aria-hidden="true"
                             />
                             {/* Content */}
-                            <div className="relative flex justify-between">
-                              <div className=" ">{""}</div>
-
-                              <div className="flex flex-nowrap items-center ml-2">
-                                <button
-                                  className="text-rose-500 hover:text-rose-600"
-                                  onClick={() =>
-                                    downloadImage(item._id, item.photo)
-                                  }
-                                >
-                                  <ArrowDownCircleIcon className="w-6" />
-                                </button>
+                            <div className="relative flex flex-col justify-between">
+                              <div className="font-semibold text-white text-sm overflow-y-auto">
+                                {item.prompt}
+                              </div>
+                              <div className="relative flex justify-between">
+                                <div className="">{""}</div>
+                                <div className="flex flex-nowrap items-center ml-2">
+                                  <button
+                                    className="text-rose-500 hover:text-rose-600"
+                                    onClick={() =>
+                                      downloadImage(item._id, item.photo)
+                                    }
+                                  >
+                                    <ArrowDownCircleIcon className="w-6" />
+                                  </button>
+                                </div>
                               </div>
                             </div>
                           </div>
