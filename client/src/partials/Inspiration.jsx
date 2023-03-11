@@ -17,7 +17,7 @@ function Inspiration() {
       try {
         setLoading(true);
         const response = await axios.get("/api/images/shared");
-        setGalleryImages(response.data.data.reverse());
+        setGalleryImages(response.data.data.reverse().slice(0, 9));
       } catch (error) {
         console.log(error);
       } finally {
@@ -60,51 +60,48 @@ function Inspiration() {
                     className="max-w-sm mx-auto sm:max-w-none grid gap-6 sm:grid-cols-2 md:grid-cols-3 items-start"
                     data-aos-id-inpspiration
                   >
-                    {galleryImages
-                      ?.reverse()
-                      .slice(0, 9)
-                      .map((item, index) => {
-                        return (
-                          <a
-                            key={index}
-                            className="relative group hover:shadow-xl transition duration-150 ease-in-out"
-                            href="#0"
-                            data-aos="fade-down"
-                            data-aos-anchor="[data-aos-id-inpspiration]"
-                          >
-                            <img
-                              className="w-full aspect-square object-cover border-4 p-1"
-                              src={item.photo}
-                              width="352"
-                              height="352"
-                              alt="Inspiration 01"
+                    {galleryImages.map((item, index) => {
+                      return (
+                        <a
+                          key={index}
+                          className="relative group hover:shadow-xl transition duration-150 ease-in-out"
+                          href="#0"
+                          data-aos="fade-down"
+                          data-aos-anchor="[data-aos-id-inpspiration]"
+                        >
+                          <img
+                            className="w-full aspect-square object-cover border-4 p-1"
+                            src={item.photo}
+                            width="352"
+                            height="352"
+                            alt="Inspiration 01"
+                          />
+                          {/* Content on hover */}
+                          <div className="md:hidden md:group-hover:block absolute bottom-0 left-0 right-0 p-4">
+                            {/* Backdrop */}
+                            <div
+                              className="absolute inset-0 -mt-4 bg-gradient-to-t from-gray-800 to-transparent opacity-80 pointer-events-none"
+                              aria-hidden="true"
                             />
-                            {/* Content on hover */}
-                            <div className="md:hidden md:group-hover:block absolute bottom-0 left-0 right-0 p-4">
-                              {/* Backdrop */}
-                              <div
-                                className="absolute inset-0 -mt-4 bg-gradient-to-t from-gray-800 to-transparent opacity-80 pointer-events-none"
-                                aria-hidden="true"
-                              />
-                              {/* Content */}
-                              <div className="relative flex justify-between">
-                                <div className=" ">{""}</div>
+                            {/* Content */}
+                            <div className="relative flex justify-between">
+                              <div className=" ">{""}</div>
 
-                                <div className="flex flex-nowrap items-center ml-2">
-                                  <button
-                                    className="text-rose-500 hover:text-rose-600"
-                                    onClick={() =>
-                                      downloadImage(item._id, item.photo)
-                                    }
-                                  >
-                                    <ArrowDownCircleIcon className="w-6" />
-                                  </button>
-                                </div>
+                              <div className="flex flex-nowrap items-center ml-2">
+                                <button
+                                  className="text-rose-500 hover:text-rose-600"
+                                  onClick={() =>
+                                    downloadImage(item._id, item.photo)
+                                  }
+                                >
+                                  <ArrowDownCircleIcon className="w-6" />
+                                </button>
                               </div>
                             </div>
-                          </a>
-                        );
-                      })}
+                          </div>
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
