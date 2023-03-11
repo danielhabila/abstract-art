@@ -38,7 +38,7 @@ const CreatePost = () => {
         await axios.post("/api/postToDB", {
           ...form,
         });
-        alert("Success");
+        alert("Your creation has been successfully shared with the community.");
         navigate("/");
       } catch (err) {
         console.log(err);

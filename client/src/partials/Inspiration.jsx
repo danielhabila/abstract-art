@@ -77,7 +77,7 @@ function Inspiration() {
                             alt="Inspiration 01"
                           />
                           {/* Content on hover */}
-                          <div className="md:hidden md:group-hover:block absolute bottom-0 left-0 right-0 p-4">
+                          <div className="hidden group-hover:block absolute bottom-0 left-0 right-0 p-4">
                             {/* Backdrop */}
                             <div
                               className="absolute inset-0 -mt-4 bg-gradient-to-t from-gray-800 to-transparent opacity-80 pointer-events-none"
@@ -88,11 +88,13 @@ function Inspiration() {
                               <div className="font-semibold text-white text-sm overflow-y-auto">
                                 {item.prompt}
                               </div>
-                              <div className="relative flex justify-between">
-                                <div className="">{""}</div>
-                                <div className="flex flex-nowrap items-center ml-2">
+                              {item.name && item.name !== "" ? (
+                                <div className="flex justify-between items-center">
+                                  <div className=" text-white text-xs font-semibold opacity-60 truncate">
+                                    {item.name}
+                                  </div>
                                   <button
-                                    className="text-rose-500 hover:text-rose-600"
+                                    className="text-rose-500 hover:text-rose-600 "
                                     onClick={() =>
                                       downloadImage(item._id, item.photo)
                                     }
@@ -100,7 +102,21 @@ function Inspiration() {
                                     <ArrowDownCircleIcon className="w-6" />
                                   </button>
                                 </div>
-                              </div>
+                              ) : (
+                                <div className="relative flex justify-between">
+                                  <div className="">{""}</div>
+                                  <div className="flex flex-nowrap items-center ml-2">
+                                    <button
+                                      className="text-rose-500 hover:text-rose-600"
+                                      onClick={() =>
+                                        downloadImage(item._id, item.photo)
+                                      }
+                                    >
+                                      <ArrowDownCircleIcon className="w-6" />
+                                    </button>
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </a>
