@@ -1,7 +1,7 @@
 import React from "react";
 
 import Illustration from "../images/testimonial-illustration.svg";
-import TestimonialImage from "../images/testimonial-01.jpg";
+import TestimonialImage from "../images/testimonial-02.jpg";
 
 function Testimonial() {
   return (
@@ -33,18 +33,11 @@ function Testimonial() {
                 />
               </div>
               <div className="font-cabinet-grotesk font-bold text-lg text-gray-900 mb-2">
-                "The service helped me find the perfect match. Two clear
-                benefits I gained are a good assessment of my needs and a pool
-                of reliable potential talents."
+                I've been using AbstractAI to track my ideas, and it's such a
+                helpful and enjoyable product. Thanks for building it!
               </div>
               <div className="font-cabinet-grotesk text-gray-900 font-medium">
-                Patrick Mills <span className="text-gray-400">-</span> CEO,{" "}
-                <a
-                  className="text-blue-500 font-bold hover:text-blue-600"
-                  href="#0"
-                >
-                  EasyJet
-                </a>
+                - Julliet Pan
               </div>
             </div>
           </div>

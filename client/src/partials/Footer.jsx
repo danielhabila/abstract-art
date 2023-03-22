@@ -29,6 +29,7 @@ function Footer() {
                   placeholder="Your email"
                   aria-label="Your email"
                   name="email"
+                  required
                 />
                 <button
                   className="btn-sm text-white bg-blue-500 hover:bg-blue-600 shadow-sm whitespace-nowrap"

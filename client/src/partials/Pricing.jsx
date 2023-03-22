@@ -142,9 +142,9 @@ function Pricing() {
                   </div>
                   <Link
                     className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
-                    to="#"
+                    to="/signup"
                   >
-                    Subscribe
+                    Start Free Trial
                   </Link>
                 </div>
                 <div className="font-medium text-gray-100 mb-4">

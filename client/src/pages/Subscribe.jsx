@@ -1,14 +1,12 @@
 import React from "react";
 import Header from "../partials/Header";
 import Footer from "../partials/Footer";
-
 import Avatar01 from "../images/avatar-01.jpg";
 import Avatar02 from "../images/avatar-02.jpg";
 import Avatar03 from "../images/avatar-03.jpg";
 import Avatar04 from "../images/avatar-04.jpg";
-import Avatar05 from "../images/avatar-05.jpg";
-import Testimonial01 from "../images/testimonial-01.jpg";
-import Testimonial02 from "../images/testimonial-02.jpg";
+import Testimonial01 from "../images/testimonial-03.jpg";
+import Testimonial02 from "../images/testimonial-01.jpg";
 
 function Subscribe() {
   return (
@@ -24,14 +22,13 @@ function Subscribe() {
             <section>
               {/* Page title */}
               <h1 className="h2 font-cabinet-grotesk mb-5">
-                Never miss an update
+                You've been invited to join the community of creatives
               </h1>
               {/* Page content */}
               <div className="text-gray-500 space-y-8">
                 <p className="text-lg">
-                  This newsletter is written by Mark Ivings, who previously
-                  worked at Google, Medium, Vimeo, and Qonto. Here is what to
-                  expect by subscribing:
+                  This newsletter is written by Danny, who previously worked at
+                  WSJ. Here is what to expect by subscribing:
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -43,7 +40,8 @@ function Subscribe() {
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
                     <span>
-                      Big tech and high-growth startups, from the inside.
+                      Get up-to-date news on the creator economy, from the
+                      inside.
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -54,10 +52,7 @@ function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>
-                      Actionable advice for engineering managers, software
-                      engineers and tech workers.
-                    </span>
+                    <span>Actionable advice for successfull artists.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -68,7 +63,7 @@ function Subscribe() {
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
                     <span>
-                      A pulse on the tech market and scoop worth knowing.
+                      A pulse on the creator market and scoop worth knowing.
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -143,7 +138,7 @@ function Subscribe() {
                       />
                     </div>
                     <div className="text-sm text-gray-500 ml-3">
-                      Join 100K+ artists.
+                      Join 50K+ artists.
                     </div>
                   </div>
                 </div>
@@ -154,7 +149,7 @@ function Subscribe() {
               {/* Cards */}
               <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
                 <a
-                  className="rounded-lg border border-slate-200-t/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
+                  className="rounded-lg border border-slate-200-t/30  p-5"
                   href="#0"
                 >
                   <div className="flex flex-col h-full">
@@ -170,9 +165,9 @@ function Subscribe() {
                         “ Incredible Value “
                       </div>
                       <p className="text-sm text-gray-500 mb-2">
-                        I was able to quickly master the skills necessary to
-                        advance my career. I'm grateful for the resources Mark
-                        provided and would recommend him to anyone.
+                        AbstractAI has really helped our business in many
+                        different ways. I just can't get enough of this awesome
+                        company. Read Story
                       </p>
                     </div>
                     <div className="text-xs font-aspekta font-[650] text-sky-500">
@@ -180,10 +175,7 @@ function Subscribe() {
                     </div>
                   </div>
                 </a>
-                <a
-                  className="rounded-lg border border-slate-200 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
-                  href="#0"
-                >
+                <a className="rounded-lg border border-slate-200 p-5" href="#0">
                   <div className="flex flex-col h-full">
                     <div className="grow">
                       <img
@@ -197,9 +189,8 @@ function Subscribe() {
                         “ The Best Newsletter “
                       </div>
                       <p className="text-sm text-gray-500 mb-2">
-                        I was able to quickly master the skills necessary to
-                        advance my career. I'm grateful for the resources Mark
-                        provided and would recommend him to anyone.
+                        If you want real art marketing that works and effective
+                        implementation - AbstractAI's got you covered.
                       </p>
                     </div>
                     <div className="text-xs font-aspekta font-[650] text-sky-500">

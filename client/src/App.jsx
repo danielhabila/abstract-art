@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import GetIntouch from "./partials/GetInTouch";
 import Subscribe from "./pages/Subscribe";
+import FreeTrial from "./pages/FreeTrial";
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/join" element={<Subscribe />} />
         <Route path="/create" element={<CreatePost />} />
+        <Route path="/signup" element={<FreeTrial />} />
       </Routes>
       <GetIntouch />
     </>
