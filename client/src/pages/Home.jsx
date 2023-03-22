@@ -6,6 +6,7 @@ import Inspiration from "../partials/Inspiration";
 import Carousel from "../partials/Carousel";
 import Pricing from "../partials/Pricing";
 import Footer from "../partials/Footer";
+import Testimonial from "../partials/Testimonial";
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
         <Inspiration />
         <Carousel />
         <Pricing />
+        <Testimonial />
       </main>
       {/*  Site footer */}
       <Footer />

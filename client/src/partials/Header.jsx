@@ -26,7 +26,7 @@ function Header() {
                   className="btn-sm text-white text-sm font-semibold bg-blue-500 hover:bg-blue-600 lg:px-5 py-2 items-center"
                   to="/create"
                 >
-                  Create
+                  Create ✨
                 </Link>
               </li>
             </ul>

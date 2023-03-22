@@ -12,13 +12,23 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-8 md:pt-12 md:pb-6">
           <div className="flex flex-col items-center justify-center mb-12 md:mb-6">
-            <form className="w-full max-w-sm">
+            <form
+              className="w-full max-w-sm"
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert(
+                  "You've been successfully added to the greatest list on earth 🤩."
+                );
+                e.target.email.value = "";
+              }}
+            >
               <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-none">
                 <input
                   type="email"
                   className="form-input w-full mb-2 sm:mb-0 sm:mr-2"
                   placeholder="Your email"
                   aria-label="Your email"
+                  name="email"
                 />
                 <button
                   className="btn-sm text-white bg-blue-500 hover:bg-blue-600 shadow-sm whitespace-nowrap"
@@ -32,18 +42,9 @@ function Footer() {
             </form>
           </div>
           {/* Bottom area */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-2">
             {/* Social links */}
             <ul className="inline-flex mb-4">
-              {/* <li>
-                <a
-                  className="flex justify-center items-center text-blue-500 bg-blue-100 hover:text-white hover:bg-blue-500 rounded-full transition duration-150 ease-in-out"
-                  href="#0"
-                  aria-label="Twitter"
-                >
-                  <TwitterIcon />
-                </a>
-              </li> */}
               <li className="ml-4">
                 <a
                   className="flex justify-center items-center text-blue-500 bg-blue-100 hover:text-white hover:bg-blue-500 rounded-full transition duration-150 ease-in-out"

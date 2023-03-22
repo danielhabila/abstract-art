@@ -59,7 +59,7 @@ function Hero() {
               >
                 <Link
                   className="btn text-white bg-blue-500 hover:bg-blue-600 w-full shadow-sm"
-                  to="#"
+                  to="/join"
                 >
                   Join The Community
                 </Link>
