@@ -6,6 +6,8 @@ import imagesRoute from "./routes/imagesRoute.js";
 import dalleRoute from "./routes/dalleRoute.js";
 import postImageRoute from "./routes/postImageRoute.js";
 
+const port = 4040;
+
 connectDB();
 
 dotenv.config();
@@ -21,6 +23,6 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.listen(3000, () => {
-  console.log("server is listening on port 3000");
+app.listen(port, () => {
+  console.log(`server is listening on port ${port}`);
 });

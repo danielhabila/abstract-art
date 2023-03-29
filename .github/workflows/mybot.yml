@@ -20,8 +20,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: |
+            client/node_modules
+            server/node_modules
             client/package-lock.json
             server/package-lock.json
+            client/package.json
+            server/package.json
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/package.json') }}
 
       - name: Create env file
         run: |
