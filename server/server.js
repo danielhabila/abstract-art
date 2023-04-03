@@ -6,7 +6,7 @@ import imagesRoute from "./routes/imagesRoute.js";
 import dalleRoute from "./routes/dalleRoute.js";
 import postImageRoute from "./routes/postImageRoute.js";
 
-const port = 4040;
+const port = 3000;
 
 connectDB();
 
