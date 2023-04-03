@@ -51,4 +51,4 @@ jobs:
       - name: Restart pm2
         run: |
           cd server
-          pm2 restart 2
+          pm2 abstract-ai
